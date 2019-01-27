@@ -3,7 +3,6 @@
 You are in vacations and you wanna visit different places. With this app you'll be able take notes about these places and positioning it on a map then generate a pathway to follow (in footsteps or whatever) and rapidly makes what you wanna do. Set aside the time you lose to think about where you should go and how to go.
 
 ## Todo
-- Design the app with Angular material
 - Create a map page
 - Use Google map to place markers with details
 - Allow to add a marker on the map
@@ -13,9 +12,10 @@ You are in vacations and you wanna visit different places. With this app you'll 
 - Caching markers with service workers
 
 ## In progress
-- Create signin/signup page
+- Design the app with Angular material
 ## Done
 - Link the app to Firebase
+- Create signin/signup page
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
