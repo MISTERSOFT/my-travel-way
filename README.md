@@ -1,4 +1,21 @@
-# MyTravelWay
+# My Travel Way App
+
+You are in vacations and you wanna visit different places. With this app you'll be able take notes about these places and positioning it on a map then generate a pathway to follow (in footsteps or whatever) and rapidly makes what you wanna do. Set aside the time you lose to think about where you should go and how to go.
+
+## Todo
+- Link the app to Firebase
+- Create signin/signup page
+- Create a map page
+- Use Google map to place markers with details
+- Allow to add a marker on the map
+- Save user's markers in Firebase
+- Draw a pathway depending of the user position to go throught all markers
+- Make the app a PWA
+- Caching markers with service workers
+
+## In progress
+
+## Done
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
