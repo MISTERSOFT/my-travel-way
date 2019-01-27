@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@app/core/auth';
 
 @Component({
@@ -8,13 +9,17 @@ import { AuthService } from '@app/core/auth';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(
+    public auth: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   login() {
     this.auth.loginWithFacebook();
+    // TODO: Redirect after login
+    //.then(() => this.router.navigateByUrl('/map'));
   }
 
   logout() {

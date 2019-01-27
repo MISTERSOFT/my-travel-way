@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material';
 import { SharedModule } from '@app/shared/shared.module';
 import { SigninRoutingModule } from './signin-routing.module';
 import { SigninComponent } from './signin.component';
@@ -7,7 +8,8 @@ import { SigninComponent } from './signin.component';
   declarations: [SigninComponent],
   imports: [
     SigninRoutingModule,
-    SharedModule
+    SharedModule,
+    MatButtonModule,
   ]
 })
 export class SigninModule { }

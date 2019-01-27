@@ -6,32 +6,35 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class AuthService {
   private _isAuthentificated$ = new BehaviorSubject<boolean>(false);
-  private _user$ = new BehaviorSubject<firebase.User>(null);
+  private _user$ = new BehaviorSubject<auth.UserCredential>(null);
 
-  isAuthentificated$ = this._isAuthentificated$.asObservable();
-  user$ = this._user$.asObservable();
+  get isAuthentificated$() {
+    return this._isAuthentificated$.asObservable();
+  }
+
+  get user$() {
+    return this._user$.asObservable();
+  }
 
   constructor(private afAuth: AngularFireAuth) {
     afAuth.auth.useDeviceLanguage();
-
-    this.catchLoginError = this.catchLoginError.bind(this);
   }
 
-  loginWithFacebook() {
-    this.afAuth.auth
-      .signInWithPopup(new auth.FacebookAuthProvider())
-      .then((result) => {
-        console.log(`[user details]`, result);
-        this.setAuth(result.user);
-      })
-      .catch(this.catchLoginError);
+  async loginWithFacebook() {
+    try {
+      const result = await this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
+      this.setAuth(result);
+    } catch (err) {
+      console.log(`[${err.code}] : ${err.message}`);
+      this.setAuth(null);
+    }
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    this.afAuth.auth.signOut().then(() => this.setAuth(null));
   }
 
-  private setAuth(authUser: firebase.User) {
+  private setAuth(authUser: auth.UserCredential) {
     if (authUser) {
       this._user$.next(authUser);
       this._isAuthentificated$.next(true);
@@ -39,10 +42,5 @@ export class AuthService {
       this._user$.next(null);
       this._isAuthentificated$.next(false);
     }
-  }
-
-  private catchLoginError(err: { code: string, message: string }) {
-    console.log(`[${err.code}] : ${err.message}`);
-    this.setAuth(null);
   }
 }

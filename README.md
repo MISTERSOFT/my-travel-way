@@ -12,10 +12,12 @@ You are in vacations and you wanna visit different places. With this app you'll 
 - Caching markers with service workers
 
 ## In progress
-- Design the app with Angular material
+- Create a map page
+
 ## Done
 - Link the app to Firebase
 - Create signin/signup page
+- Design the app with Angular material
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
