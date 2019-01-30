@@ -9,7 +9,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" *ngIf="(auth.isAuthentificated$ | async)">
+    <mat-toolbar color="primary" *ngIf="auth.isAuthentificated">
       <button
         type="button"
         aria-label="Toggle sidenav"

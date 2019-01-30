@@ -2,12 +2,14 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AuthService } from './auth';
+import { AuthGuard, AuthService, SkipSigninGuard } from './auth';
 
 @NgModule({
   declarations: [],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard,
+    SkipSigninGuard
   ],
   imports: [
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
@@ -24,7 +26,7 @@ export class CoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: [AuthService]
+      providers: [AuthService, AuthGuard, SkipSigninGuard]
     }
   }
 }

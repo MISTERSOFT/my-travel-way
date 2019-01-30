@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSidenav } from '@angular/material';
+import { Router } from '@angular/router';
 import { AuthService } from '@app/core/auth';
 
 @Component({
@@ -8,10 +9,12 @@ import { AuthService } from '@app/core/auth';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private router: Router) { }
 
   logout(drawer: MatSidenav) {
-    this.auth.logout();
     drawer.close();
+    this.auth.logout().then(() => {
+      this.router.navigateByUrl('/signin');
+    });
   }
 }

@@ -17,13 +17,9 @@ export class SigninComponent implements OnInit {
   }
 
   login() {
-    this.auth.loginWithFacebook();
+    this.auth.loginWithFacebook()
     // TODO: Redirect after login
-    //.then(() => this.router.navigateByUrl('/map'));
-  }
-
-  logout() {
-    this.auth.logout();
+    .then(() => this.router.navigateByUrl('/map'));
   }
 
 }
