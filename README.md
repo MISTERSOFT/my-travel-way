@@ -4,15 +4,30 @@ You are in vacations and you wanna visit different places. With this app you'll 
 
 ## Todo
 - Create a map page
-- Use Google map to place markers with details
-- Allow to add a marker on the map
-- Save user's markers in Firebase
-- Draw a pathway depending of the user position to go throught all markers
+  - Install google map package
+  - Display a map
+  - Place maker to positionate user on the map
+  - Allow user to add maker on the map
+    - Create a form to search details about a place
+    - Allow user to add this place
+    - Save place in Firebase
+  - Put user's markers with details on the map
+  - Draw a pathway depending of the user position to go throught all user's markers
 - Make the app a PWA
-- Caching markers with service workers
+- Caching map data with service worker
+- Make Firebase Hosting to cache request
 
 ## In progress
 - Create a map page
+  - Install google map package
+  - Display a map
+  - Place maker to positionate user on the map
+  - Allow user to add maker on the map
+    - Create a form to search details about a place
+    - Allow user to add this place
+    - Save place in Firebase
+  - Put user's markers with details on the map
+  - Draw a pathway depending of the user position to go throught all user's markers
 
 ## Done
 - Link the app to Firebase
