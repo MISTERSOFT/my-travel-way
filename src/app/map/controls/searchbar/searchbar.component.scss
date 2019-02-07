@@ -1,0 +1,19 @@
+.searchbar {
+  // position: absolute;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  // bottom: -92px;
+  bottom: 0px;
+  top: calc(100% - 0px);
+  padding: 12px;
+  // height: 92px;
+  // height: auto;
+  background: rgba(35, 35, 35, 1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  & mat-form-field {
+    width: 100%;
+  }
+}
