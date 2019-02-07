@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  mapboxglApiKey: 'pk.eyJ1IjoibWlzdGVyc29mdCIsImEiOiJjanJxcGJnd28wMnZqNDRxczZkdTg1emJrIn0.MBO0wRrbBqCRwYGfnwHJQA',
   firebase: {
     apiKey: "AIzaSyCfQxtikw0_zs9bqzgGGtPECI5Eqtsljbw",
     authDomain: "my-travel-way-39131.firebaseapp.com",
