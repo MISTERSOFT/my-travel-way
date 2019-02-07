@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { Router } from '@angular/router';
 import { AuthService } from '@app/core/auth';
+import { CdkPortalService } from '@app/layout/cdk-portal.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,10 @@ import { AuthService } from '@app/core/auth';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public auth: AuthService, private router: Router) { }
+  constructor(
+    private router: Router,
+    public auth: AuthService,
+    public cdkPortal: CdkPortalService) { }
 
   logout(drawer: MatSidenav) {
     drawer.close();
