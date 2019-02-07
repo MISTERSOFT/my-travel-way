@@ -3,36 +3,25 @@
 You are in vacations and you wanna visit different places. With this app you'll be able take notes about these places and positioning it on a map then generate a pathway to follow (in footsteps or whatever) and rapidly makes what you wanna do. Set aside the time you lose to think about where you should go and how to go.
 
 ## Todo
-- Create a map page
-  - Install google map package
-  - Display a map
-  - Place maker to positionate user on the map
-  - Allow user to add maker on the map
-    - Create a form to search details about a place
-    - Allow user to add this place
-    - Save place in Firebase
-  - Put user's markers with details on the map
-  - Draw a pathway depending of the user position to go throught all user's markers
+- Place maker to positionate user on the map
+- Allow user to add places on the map
+- Save added places in Firebase
+- Show more details when marker is clicked
+- Draw a pathway depending of the user position to go throught all user's markers
 - Make the app a PWA
 - Caching map data with service worker
 - Make Firebase Hosting to cache request
 
 ## In progress
-- Create a map page
-  - Install google map package
-  - Display a map
-  - Place maker to positionate user on the map
-  - Allow user to add maker on the map
-    - Create a form to search details about a place
-    - Allow user to add this place
-    - Save place in Firebase
-  - Put user's markers with details on the map
-  - Draw a pathway depending of the user position to go throught all user's markers
+- Place maker to positionate user on the map
 
 ## Done
 - Link the app to Firebase
 - Create signin/signup page
 - Design the app with Angular material
+- Install MapboxGL package
+- Create a map
+- Search places
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
