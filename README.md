@@ -3,7 +3,6 @@
 You are in vacations and you wanna visit different places. With this app you'll be able take notes about these places and positioning it on a map then generate a pathway to follow (in footsteps or whatever) and rapidly makes what you wanna do. Set aside the time you lose to think about where you should go and how to go.
 
 ## Todo
-- Place maker to positionate user on the map
 - Allow user to add places on the map
 - Save added places in Firebase
 - Show more details when marker is clicked
@@ -11,9 +10,11 @@ You are in vacations and you wanna visit different places. With this app you'll 
 - Make the app a PWA
 - Caching map data with service worker
 - Make Firebase Hosting to cache request
+- Add friend system
+- Track user friends on the map
 
 ## In progress
-- Place maker to positionate user on the map
+- Track user movement on the map
 
 ## Done
 - Link the app to Firebase
@@ -22,6 +23,7 @@ You are in vacations and you wanna visit different places. With this app you'll 
 - Install MapboxGL package
 - Create a map
 - Search places
+- Place maker to positionate user on the map
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
