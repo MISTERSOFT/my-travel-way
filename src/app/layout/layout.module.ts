@@ -1,7 +1,7 @@
 import { PortalModule } from '@angular/cdk/portal';
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule } from '@angular/material';
-import { ToolbarSearchButtonComponent } from './toolbar';
+import { ToolbarActionsComponent, ToolbarSearchButtonComponent } from './toolbar';
 
 
 @NgModule({
@@ -11,13 +11,16 @@ import { ToolbarSearchButtonComponent } from './toolbar';
     MatIconModule
   ],
   exports: [
-    PortalModule
+    PortalModule,
+    ToolbarActionsComponent
   ],
   declarations: [
-    ToolbarSearchButtonComponent
+    ToolbarSearchButtonComponent,
+    ToolbarActionsComponent
   ],
   entryComponents: [
-    ToolbarSearchButtonComponent
+    ToolbarSearchButtonComponent,
+    ToolbarActionsComponent
   ],
   providers: [],
 })

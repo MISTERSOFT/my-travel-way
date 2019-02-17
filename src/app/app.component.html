@@ -5,7 +5,18 @@
       [opened]="false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item (click)="logout(drawer)">Logout</a>
+      <a mat-list-item [routerLink]="['/book']" routerLinkActive="router-link-active" (click)="closeDrawer(drawer)">
+        <mat-icon aria-label="Book icon">book</mat-icon>
+        Book
+      </a>
+      <a mat-list-item [routerLink]="['/map']" routerLinkActive="router-link-active" (click)="closeDrawer(drawer)">
+        <mat-icon aria-label="Navigation icon">navigation</mat-icon>
+        Map
+      </a>
+      <a mat-list-item (click)="logout(drawer)">
+        <mat-icon aria-label="Disconnect icon">exit_to_app</mat-icon>
+        Logout
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -19,7 +30,8 @@
       </button>
       <span>my-travel-way</span>
       <span class="toolbar-spacer"></span>
-      <ng-template [cdkPortalOutlet]="cdkPortal.headerPortalComponent$ | async"></ng-template>
+      <!-- <ng-template [cdkPortalOutlet]="cdkPortal.headerPortalComponent$ | async"></ng-template> -->
+      <ng-template [cdkPortalOutlet]="cdkPortal.headerPortal$ | async"></ng-template>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

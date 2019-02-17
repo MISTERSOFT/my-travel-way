@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatRippleModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatListModule, MatRippleModule } from '@angular/material';
 import { SharedModule } from '@app/shared/shared.module';
 import { MapGeolocationControlComponent, MapSearchbarControlComponent } from './controls';
 import { MapRoutingModule } from './map-routing.module';
@@ -15,8 +15,6 @@ import { MapService } from './map.service';
   imports: [
     SharedModule,
     MapRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatIconModule,
     MatButtonModule,
     MatListModule,

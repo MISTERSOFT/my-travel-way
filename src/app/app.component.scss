@@ -19,3 +19,7 @@
 .toolbar-spacer {
   flex: 1 1 auto;
 }
+
+a.mat-list-item.router-link-active {
+  background: rgba(#424242, 0.6);
+}

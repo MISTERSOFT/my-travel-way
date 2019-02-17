@@ -37,7 +37,7 @@ export class MapComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // Add search button in the toolbar
-    this.cdkPortal.setComponentInPortal(ToolbarSearchButtonComponent);
+    this.cdkPortal.attachToHeader(ToolbarSearchButtonComponent);
 
     // Simulate user movement
     // this.geolocation.simulateMovement()
