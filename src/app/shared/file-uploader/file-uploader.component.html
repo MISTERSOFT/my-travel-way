@@ -1,0 +1,5 @@
+<button mat-stroked-button (click)="open()">
+  <span class="text">{{ fileName ? (fileName | truncate) : 'Select a picture to upload' }}</span>
+  <mat-icon>cloud_upload</mat-icon>
+</button>
+<input #fileInput type="file" accept="image/*" capture (change)="onFileInputChanged($event)" class="hide">
