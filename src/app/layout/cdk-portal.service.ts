@@ -1,4 +1,4 @@
-import { ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
+import { ComponentPortal, ComponentType, TemplatePortal } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -10,11 +10,11 @@ export class CdkPortalService {
   readonly headerPortalComponent$ = new Subject<ComponentPortal<any>>();
   readonly headerPortal$ = new Subject<ComponentPortal<any>|TemplatePortal<any>>();
 
-  attachToHeader(ref: any|TemplatePortal) {
-    if (ref instanceof TemplatePortal) {
-      this.headerPortal$.next(ref);
+  attachToHeader(componentOrTemplate: ComponentType<any>|TemplatePortal<any>) {
+    if (componentOrTemplate instanceof TemplatePortal) {
+      this.headerPortal$.next(componentOrTemplate);
     } else {
-      this.headerPortal$.next(new ComponentPortal(ref));
+      this.headerPortal$.next(new ComponentPortal(componentOrTemplate));
     }
   }
 
