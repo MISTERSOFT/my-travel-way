@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GeolocationService } from '@app/core/navigator';
 import { MapComponent } from './../../map.component';
 
 @Component({
@@ -9,16 +8,12 @@ import { MapComponent } from './../../map.component';
 })
 
 export class MapGeolocationControlComponent {
-  // private _map: Mapbox.Map;
-  constructor(private parent: MapComponent, private geolocation: GeolocationService) {
-    // this._map = parent.map;
-  }
+  constructor(private parent: MapComponent) { }
 
+  // Apply a smooth camera movement to the user location
   geolocate() {
-    this.geolocation.currentPositionOnce$.subscribe(({ coords }) => {
-      this.parent.map.easeTo({
-        center: [coords.longitude, coords.latitude]
-      });
+    this.parent.map.easeTo({
+      center: this.parent.currentUserPosition
     });
   }
 }
