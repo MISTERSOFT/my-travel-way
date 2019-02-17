@@ -5,7 +5,7 @@ import { LocalStorage } from 'ngx-store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService implements OnDestroy {
   private _authState: firebase.User = null;
   @LocalStorage('is_authentificated') private _isAuthentificated: boolean;

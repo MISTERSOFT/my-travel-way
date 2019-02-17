@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { from, interval, Observable, throwError, zip } from 'rxjs';
 import { flatMap, map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class GeolocationService {
   private _positionOptions: PositionOptions = {
     enableHighAccuracy: true,

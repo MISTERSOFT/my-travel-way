@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -28,15 +28,15 @@ import { GeolocationService } from './navigator';
   ]
 })
 export class CoreModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CoreModule,
-      providers: [
-        AuthService,
-        AuthGuard,
-        SkipSigninGuard,
-        GeolocationService,
-      ]
-    }
-  }
+  // static forRoot(): ModuleWithProviders {
+  //   return {
+  //     ngModule: CoreModule,
+  //     providers: [
+  //       AuthService,
+  //       AuthGuard,
+  //       SkipSigninGuard,
+  //       GeolocationService,
+  //     ]
+  //   }
+  // }
 }

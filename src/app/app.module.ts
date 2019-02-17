@@ -22,7 +22,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     WebStorageModule,
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
-    CoreModule.forRoot(),
+    CoreModule, // .forRoot(),
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -31,7 +31,12 @@ import { CoreModule } from './core/core.module';
     MatListModule,
     MatMenuModule,
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: HAMMER_GESTURE_CONFIG,
+    //   useClass: HammerGestureConfig
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
