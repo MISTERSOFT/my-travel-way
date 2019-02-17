@@ -1,0 +1,23 @@
+<app-toolbar-actions>
+  <button mat-icon-button>
+    <mat-icon>add</mat-icon>
+  </button>
+</app-toolbar-actions>
+
+<div class="searchbar">
+  <mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search" [(ngModel)]="searchValue">
+  </mat-form-field>
+</div>
+
+<mat-list>
+  <h3 mat-subheader>Books</h3>
+  <mat-list-item *ngFor="let book of books" matRipple [routerLink]="book.id">
+    <div class="item">
+      <img class="item-image" [src]="book.image">
+      <div class="item-text">{{ book.name }}</div>
+      <div class="item-text-end">{{ book.placesCount }} places</div>
+    </div>
+  </mat-list-item>
+</mat-list>

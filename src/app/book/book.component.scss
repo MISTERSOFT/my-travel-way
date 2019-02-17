@@ -1,0 +1,31 @@
+.mat-list-item {
+  height: 68px;
+}
+
+.item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.item-image {
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+}
+.item-text {
+  flex: 1;
+  padding: 16px;
+}
+.item-text-end {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+.searchbar {
+  padding: 0px 10px;
+  & mat-form-field {
+    width: 100%;
+  }
+}
