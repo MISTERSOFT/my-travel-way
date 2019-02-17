@@ -14,7 +14,7 @@ You are in vacations and you wanna visit different places. With this app you'll 
 - Track user friends on the map
 
 ## In progress
-- Track user movement on the map
+- Create book containing user's places
 
 ## Done
 - Link the app to Firebase
@@ -24,6 +24,7 @@ You are in vacations and you wanna visit different places. With this app you'll 
 - Create a map
 - Search places
 - Place maker to positionate user on the map
+- Track user movement on the map
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
