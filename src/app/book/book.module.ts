@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatIconModule, MatListModule, MatRippleModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatIconModule, MatListModule, MatRippleModule } from '@angular/material';
 import { LayoutModule } from '@app/layout/layout.module';
 import { SharedModule } from '@app/shared/shared.module';
 import { BookComponent } from './book.component';
 import { BookRoutingModule } from './book.routing';
 import { BookDetailsComponent } from './details/details.component';
+import { BookFormComponent } from './shared';
 
 @NgModule({
   declarations: [
     BookComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    BookFormComponent
   ],
   imports: [
     SharedModule,
@@ -19,6 +21,10 @@ import { BookDetailsComponent } from './details/details.component';
     MatIconModule,
     MatListModule,
     MatRippleModule,
+    MatDialogModule,
+  ],
+  entryComponents: [
+    BookFormComponent
   ]
 })
 export class BookModule { }

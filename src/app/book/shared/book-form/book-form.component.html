@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>New</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field class="input-fullwidth">
+      <input matInput [placeholder]="'Book name'" formControlName="name" required>
+      <mat-error *ngIf="isInvalid">Required</mat-error>
+    </mat-form-field>
+    <app-file-uploader class="file-uploader" (onFileSelected)="onFileSelected($event)"></app-file-uploader>
+  </form>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button [disabled]="isInvalid" (click)="validate()">Ok</button>
+</div>

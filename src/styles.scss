@@ -3,3 +3,10 @@
 html, body { height: 100%; overflow: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.input-fullwidth {
+  width: 100%;
+}
+
+.dialog-actions {
+  justify-content: flex-end;
+}
