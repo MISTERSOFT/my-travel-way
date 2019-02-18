@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { AuthService } from '@app/core/auth';
-import { UploadService } from '@app/core/common';
+import { NotifyService, UploadService } from '@app/core/common';
 import { BookModel } from '@app/shared/models';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -20,6 +20,7 @@ export class BookComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private auth: AuthService,
+    private notify: NotifyService,
     private upload: UploadService,
     private api: BookService) { }
 
