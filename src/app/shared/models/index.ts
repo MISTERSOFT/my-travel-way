@@ -1,3 +1,3 @@
 export * from './book.model';
-export * from './place.model';
+export * from './place-forward-geocoding.model';
 
