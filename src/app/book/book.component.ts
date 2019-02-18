@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material';
 import { AuthService } from '@app/core/auth';
 import { UploadService } from '@app/core/common';
 import { BookModel } from '@app/shared/models';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { BookService } from './book.service';
 import { BookFormComponent } from './shared';
 
@@ -13,19 +15,16 @@ import { BookFormComponent } from './shared';
 })
 export class BookComponent implements OnInit {
   searchValue: string;
-  books: BookModel[];
+  books$: Observable<BookModel[]>;
 
   constructor(
     private dialog: MatDialog,
     private auth: AuthService,
     private upload: UploadService,
-    public api: BookService) { }
+    private api: BookService) { }
 
   ngOnInit() {
-    this.api.getBooks().then(books => {
-      console.log('books', books);
-      this.books = books;
-    });
+    this.books$ = this.api.getUserBooks();
   }
 
   openFormPopup(isEditing = false) {
@@ -33,13 +32,15 @@ export class BookComponent implements OnInit {
     const dialogRef = this.dialog.open(BookFormComponent, { data });
     dialogRef.afterClosed().subscribe(async (result: BookModel) => {
       if (result) {
-        console.log('result', result);
-        let toCreate: BookModel = { ownerId: this.auth.user.uid, name: result.name };
+        let toCreate: BookModel = { ownerId: this.auth.user.uid, name: result.name, placesCount: 0 };
         if (result.image) {
-          const imageUrl = await this.upload.uploadImage(result.image);
-          toCreate = { ...toCreate, imageUrl };
+          this.upload.uploadImage(result.image)
+            .pipe(tap((imageUrl) => {
+              toCreate = { ...toCreate, imageUrl };
+              this.api.createBook(toCreate);
+            }))
+            .subscribe();
         }
-        this.api.createBook(toCreate);
       }
     });
   }

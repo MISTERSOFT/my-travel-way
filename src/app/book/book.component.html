@@ -13,7 +13,7 @@
 
 <mat-list>
   <h3 mat-subheader>Books</h3>
-  <mat-list-item *ngFor="let book of books" matRipple [routerLink]="book.id">
+  <mat-list-item *ngFor="let book of books$ | async" matRipple [routerLink]="book.id">
     <div class="item">
       <img class="item-image" [src]="book.imageUrl">
       <div class="item-text">{{ book.name }}</div>

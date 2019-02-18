@@ -4,4 +4,5 @@ export interface BookModel {
   ownerId: string;
   image?: File;
   imageUrl?: string;
+  placesCount: number;
 }
