@@ -3,6 +3,7 @@ import { AngularFirestore, QueryFn } from '@angular/fire/firestore';
 import { AuthService } from '@app/core/auth';
 import { BookModel } from '@app/shared/models';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class BookService {
@@ -14,7 +15,14 @@ export class BookService {
 
   getUserBooks(): Observable<BookModel[]> {
     const queryFn: QueryFn = (ref) => ref.where('ownerId', '==', this._userId);
-    return this.afs.collection<BookModel>('books', queryFn).valueChanges();
+    return this.afs.collection<BookModel>('books', queryFn).snapshotChanges()
+      .pipe(
+        map(actions => actions.map(action => {
+          const data = action.payload.doc.data();
+          const id = action.payload.doc.id;
+          return <BookModel>{ id, ...data };
+        }))
+      );
   }
 
   createBook(data: BookModel) {
