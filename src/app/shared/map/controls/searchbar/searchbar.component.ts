@@ -1,8 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ToolbarService } from '@app/layout/toolbar';
-import { MapService } from '@app/map/map.service';
 import { PlaceForwardGeocodingModel } from '@app/shared/models';
+import { MapService } from '../../map.service';
 
 @Component({
   selector: 'app-map-searchbar-control',

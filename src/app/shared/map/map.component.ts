@@ -15,7 +15,6 @@ import { MapService } from './map.service';
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
-  providers: [MapService]
 })
 export class MapComponent implements OnInit, OnDestroy {
   @ViewChild('map') mapElement: ElementRef;

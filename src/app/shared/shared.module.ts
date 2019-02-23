@@ -5,6 +5,7 @@ import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, Mat
 import { FileUploaderComponent } from './file-uploader';
 import { MapGeolocationControlComponent, MapSearchbarControlComponent } from './map/controls';
 import { MapComponent } from './map/map.component';
+import { MapService } from './map/map.service';
 import { TruncatePipe } from './pipes';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { TruncatePipe } from './pipes';
     ReactiveFormsModule,
     FileUploaderComponent,
     MapComponent,
-  ]
+  ],
+  providers: [MapService]
 })
 export class SharedModule { }
