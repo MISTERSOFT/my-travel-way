@@ -10,6 +10,7 @@ export class UploadService {
   constructor(private afs: AngularFirestore, private afStorage: AngularFireStorage) { }
 
   uploadImage(file: File) {
+    // TODO: When express api set up with firebase admin sdk => rename image with UID, resize image
     const filePath = `${this.baseImageUrl}/${file.name}`;
     // const fileRef = this.afStorage.ref(filePath);
     const task = this.afStorage.upload(filePath, file);

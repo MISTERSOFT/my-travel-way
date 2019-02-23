@@ -30,4 +30,8 @@ export class BookService {
     this.afs.collection('books').doc(id).set(data);
   }
 
+  deleteBook(id: string) {
+    // TODO: When express api set up with firebase admin sdk => delete the image stored
+    this.afs.collection('books').doc(id).delete();
+  }
 }

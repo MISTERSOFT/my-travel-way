@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatDialogModule, MatIconModule, MatListModule, MatRippleModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule, MatListModule, MatRippleModule } from '@angular/material';
 import { LayoutModule } from '@app/layout/layout.module';
 import { SharedModule } from '@app/shared/shared.module';
 import { BookComponent } from './book.component';
@@ -22,6 +22,7 @@ import { BookFormComponent } from './shared';
     MatListModule,
     MatRippleModule,
     MatDialogModule,
+    MatCheckboxModule,
   ],
   entryComponents: [
     BookFormComponent

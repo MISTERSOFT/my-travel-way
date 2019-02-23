@@ -1,6 +1,9 @@
 <app-toolbar-actions>
-  <button mat-icon-button (click)="openFormPopup()">
-    <mat-icon>add</mat-icon>
+  <button *ngIf="deleting" mat-icon-button (click)="deleteSelection()">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button *ngIf="deleting" mat-icon-button (click)="cancelDeletion()">
+    <mat-icon>close</mat-icon>
   </button>
 </app-toolbar-actions>
 
@@ -13,11 +16,27 @@
 
 <mat-list>
   <h3 mat-subheader>Books</h3>
-  <mat-list-item *ngFor="let book of books$ | async" matRipple [routerLink]="book.id">
-    <div class="item">
+  <mat-list-item *ngFor="let book of books$ | async" matRipple (tap)="handleItemTap(book, checkbox)" (press)="startDeleting(book, checkbox)">
+    <img matListAvatar [src]="book.imageUrl">
+    <h3 matLine>{{book.name}}</h3>
+    <p matLine>{{'0 places'}}</p>
+    <mat-checkbox [ngClass]="{ 'hidden': !deleting }" #checkbox></mat-checkbox>
+    <!-- <button mat-icon-button>
+      <mat-icon>info</mat-icon>
+    </button> -->
+    <!-- <div class="item">
       <img class="item-image" [src]="book.imageUrl">
       <div class="item-text">{{ book.name }}</div>
-      <!-- <div class="item-text-end">{{ book.placesCount }} places</div> -->
-    </div>
+      <div class="item-text-end">{{ book.placesCount }} places</div>
+    </div> -->
   </mat-list-item>
+  <!-- <mat-selection-list>
+    <mat-list-option *ngFor="let book of books$ | async" (press)="showBottomSheet()">
+      <img matListAvatar [src]="book.imageUrl">
+      <h3 matLine>{{book.name}}</h3>
+      <p matLine>{{'0 places'}}</p>
+    </mat-list-option>
+  </mat-selection-list> -->
 </mat-list>
+
+<button *ngIf="!deleting" mat-fab class="add-button" (click)="openFormPopup()"><mat-icon>add</mat-icon></button>
