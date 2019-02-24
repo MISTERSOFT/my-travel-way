@@ -3,18 +3,20 @@
 You are in vacations and you wanna visit different places. With this app you'll be able take notes about these places and positioning it on a map then generate a pathway to follow (in footsteps or whatever) and rapidly makes what you wanna do. Set aside the time you lose to think about where you should go and how to go.
 
 ## Todo
-- Allow user to add places on the map
-- Save added places in Firebase
+- Ask user whether he/she wants to save the tapped place after a research
 - Show more details when marker is clicked
+- Add buttons to list all places visible on the map and able user to fly on each places via a list
+- Allow user to delete places via a list
 - Draw a pathway depending of the user position to go throught all user's markers
 - Make the app a PWA
 - Caching map data with service worker
 - Make Firebase Hosting to cache request
 - Add friend system
 - Track user friends on the map
+- Add UX animations
 
 ## In progress
-- Create book containing user's places
+- Show more details when marker is clicked
 
 ## Done
 - Link the app to Firebase
@@ -25,6 +27,9 @@ You are in vacations and you wanna visit different places. With this app you'll 
 - Search places
 - Place maker to positionate user on the map
 - Track user movement on the map
+- Create book containing user's places
+- Allow user to add places on the map
+- Save added places in Firebase
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 

@@ -33,7 +33,7 @@ export class BookComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.books$ = this.api.getUserBooks();
+    this.books$ = this.api.getUserBooks$();
   }
 
   openFormPopup(isEditing = false) {

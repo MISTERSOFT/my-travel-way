@@ -19,7 +19,7 @@
   <mat-list-item *ngFor="let book of books$ | async" matRipple (tap)="handleItemTap(book, checkbox)" (press)="startDeleting(book, checkbox)">
     <img matListAvatar [src]="book.imageUrl">
     <h3 matLine>{{book.name}}</h3>
-    <p matLine>{{'0 places'}}</p>
+    <p matLine>{{ book.placesCount }} places</p>
     <mat-checkbox [ngClass]="{ 'hidden': !deleting }" #checkbox></mat-checkbox>
     <!-- <button mat-icon-button>
       <mat-icon>info</mat-icon>

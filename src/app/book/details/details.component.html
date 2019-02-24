@@ -3,3 +3,5 @@
     <mat-icon>search</mat-icon>
   </button>
 </app-toolbar-actions>
+
+<app-map (onMapInit)="onMapInit($event)" (onSearchResultAdd)="addPlace($event)"></app-map>
